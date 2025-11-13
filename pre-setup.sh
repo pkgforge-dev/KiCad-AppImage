@@ -28,16 +28,6 @@ _get_anylinux_tool() {
 	$_DLCMD "$@"
 }
 
-mkdir -p "$ANYLINUX_TOOLS_DIR" ./dist
-_get_anylinux_tool "$ANYLINUX_TOOLS_DIR"/quick-sharun       "$QUICK_SHARUN"
-_get_anylinux_tool "$ANYLINUX_TOOLS_DIR"/get-debloated-pkgs "$DEBLOATED_PACKAGES"
-_get_anylinux_tool "$ANYLINUX_TOOLS_DIR"/make-aur-package   "$MAKE_AUR_PACKAGE"
-
-chmod +x \
-	"$ANYLINUX_TOOLS_DIR"/quick-sharun       \
-	"$ANYLINUX_TOOLS_DIR"/get-debloated-pkgs \
-	"$ANYLINUX_TOOLS_DIR"/make-aur-package
-
 echo "Installing basic packaging dependencies..."
 echo "---------------------------------------------------------------"
 pacman-key --init
@@ -55,4 +45,18 @@ pacman -Syu --noconfirm \
 	xorg-server-xvfb  \
 	zsync
 
+echo "Installing tools..."
+echo "---------------------------------------------------------------"
+mkdir -p "$ANYLINUX_TOOLS_DIR" ./dist
+_get_anylinux_tool "$ANYLINUX_TOOLS_DIR"/quick-sharun       "$QUICK_SHARUN"
+_get_anylinux_tool "$ANYLINUX_TOOLS_DIR"/get-debloated-pkgs "$DEBLOATED_PACKAGES"
+_get_anylinux_tool "$ANYLINUX_TOOLS_DIR"/make-aur-package   "$MAKE_AUR_PACKAGE"
+
+chmod +x \
+	"$ANYLINUX_TOOLS_DIR"/quick-sharun       \
+	"$ANYLINUX_TOOLS_DIR"/get-debloated-pkgs \
+	"$ANYLINUX_TOOLS_DIR"/make-aur-package
+
+echo "---------------------------------------------------------------"
 echo "CONTAINER IS READY!"
+echo "---------------------------------------------------------------"
