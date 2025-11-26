@@ -12,7 +12,7 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
-if [ "$ARCH" = 'aarch64'] && [ -f /usr/lib/libprotobuf.so ] \
+if [ "$ARCH" = 'aarch64' ] && [ -f /usr/lib/libprotobuf.so ] \
   && [ ! -f /usr/lib/libprotobuf.so.32.0.0 ]; then
 	cp /usr/lib/libprotobuf.so /usr/lib/libprotobuf.so.32.0.0
 fi
