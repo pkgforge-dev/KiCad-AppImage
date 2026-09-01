@@ -37,9 +37,8 @@ quick-sharun \
 	/usr/lib/kicad/*/*/*            \
 	/usr/lib/libngspice.so*
 
-mkdir -p ./AppDir/share/applications ./AppDir/share/kicad
+mkdir -p ./AppDir/share/applications
 cp /usr/share/applications/*kicad* ./AppDir/share/applications
-cp -a /usr/share/kicad/3dmodels ./AppDir/share/kicad/
 
 # Upstream now seems to check for the APPDIR env var and hardcodes checking $APPDIR/usr/...
 # This broke the fixes for hardcoded paths we had beforehand
