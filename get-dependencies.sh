@@ -6,7 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm kicad kicad-library protobuf
+pacman -Syu --noconfirm kicad kicad-library kicad-library-3d protobuf
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
